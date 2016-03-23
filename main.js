@@ -3,11 +3,11 @@ var handleData = function(data) {
 
 	// iterate over each object inside the results array
 	data.results.forEach(function(value, index, array) {
-		var container = $('<div></div>');
+		var container = $('<div class="search-result"></div>');
 		var urls = $('<a></a>', {href: value.url});
-		var images = $('<img>', {src: value.Images[0].url_570xN});
-		var itemDetails = $('<div></div>');
-		var titles = $('<div></div>').html(value.title);
+		var images = $('<img>', {src: value.Images[0].url_170x135});
+		var itemDetails = $('<div class="details"></div>');
+		var titles = $('<div class="item-title"></div>').append($('<a></a>', {href: value.url}).html(value.title));
 		var storeNames = $('<div></div>').html(value.Shop.shop_name);
 		var priceCurrency = $('<div></div>').html(value.price + ' ' + value.currency_code);
 		
@@ -15,8 +15,8 @@ var handleData = function(data) {
 		urls.append(images);
 		container.append(urls);
 		container.append(itemDetails);
-		urls.append(titles);
-		itemDetails.append(urls);
+		//urls.append(titles);
+		itemDetails.append(titles);
 		itemDetails.append(storeNames);
 		itemDetails.append(priceCurrency);
 		//container.append(images).append(titles).append(storeNames).append(priceCurrency);
