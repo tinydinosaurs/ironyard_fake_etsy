@@ -1,3 +1,14 @@
+html, body {
+	width: 100%;
+}
 
+body {padding: 2em;}
 
+nav {border-bottom: 1px solid #ccc;}
+
+section {
+	margin-top: 16px;
+}
+
+#content {color: red;}
 /*# sourceMappingURL=main.css.map */
