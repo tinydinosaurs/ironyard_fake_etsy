@@ -8,8 +8,8 @@ var handleData = function(data) {
 		var images = $('<img>', {src: value.Images[0].url_170x135});
 		var itemDetails = $('<div class="details"></div>');
 		var titles = $('<div class="item-title"></div>').append($('<a></a>', {href: value.url}).html(value.title));
-		var storeNames = $('<div></div>').html(value.Shop.shop_name);
-		var priceCurrency = $('<div></div>').html(value.price + ' ' + value.currency_code);
+		var storeNames = $('<a></a>', {href: value.Shop.url, class: "store"}).html(value.Shop.shop_name);
+		var priceCurrency = $('<span class="price"></span>').html(value.price + ' ' + value.currency_code);
 		
 		mainContent.append(container);
 		urls.append(images);
